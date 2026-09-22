@@ -1,0 +1,26 @@
+(!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+  - ESM syntax in a file loaded as CommonJS (vitest.config.ts:1:1). Use a `.mjs` extension or set `"type": "module"` in the closest package.json
+Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.
+
+[1m[30m[46m RUN [49m[39m[22m [36mv5.0.1 [39m[90mE:/projects/byw/web-app[39m
+
+ [31m❯[39m app/utils.test.ts [2m([22m[2m0 test[22m[2m)[22m
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  app/utils.test.ts [ app/utils.test.ts ]
+ReferenceError: expect is not defined
+ ❯ node_modules/@testing-library/jest-dom/dist/index.mjs:10:1
+ ❯ setupTests.ts:1:1
+      1| import '@testing-library/jest-dom';
+       | ^
+      2|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [2mno tests[22m
+[2m   Start at [22m 03:11:37
+[2m   Duration [22m 8.22s[2m (environment 100%)[22m
+

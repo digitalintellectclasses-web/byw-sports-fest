@@ -1,0 +1,64 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Team {
+  id             String @id
+  name           String
+  penalty_points Int    @default(0)
+  
+  players        Player[]
+  
+  appearances    PlayerAppearance[]
+}
+
+model Player {
+  code   String @id
+  name   String
+  gender String
+  
+  teamId String
+  team   Team   @relation(fields: [teamId], references: [id])
+  
+  appearances PlayerAppearance[]
+}
+
+model Match {
+  id        String  @id // Match No.
+  time      String?
+  sport     String?
+  category  String?
+  stage     String?
+  team1Id   String?
+  team2Id   String?
+  score1    String?
+  score2    String?
+  winnerId  String?
+  completed String?
+  
+  appearances PlayerAppearance[]
+}
+
+model PlayerAppearance {
+  id         String @id // e.g. matchId_playerCode
+  matchId    String
+  match      Match  @relation(fields: [matchId], references: [id])
+  
+  playerCode String
+  player     Player @relation(fields: [playerCode], references: [code])
+  
+  teamId     String
+  team       Team   @relation(fields: [teamId], references: [id])
+}
+
+model Announcement {
+  id        String   @id @default(cuid())
+  message   String
+  author    String   @default("Admin")
+  createdAt DateTime @default(now())
+}

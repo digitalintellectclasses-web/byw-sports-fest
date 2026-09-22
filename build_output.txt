@@ -1,0 +1,45 @@
+
+> web-app@0.1.0 build
+> next build
+
+▲ Next.js 16.3.5 (Turbopack)
+✓ Running next.config.ts took 32ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 395ms
+  Running TypeScript ...
+  Finished TypeScript in 2.2s ...
+  Collecting page data using 8 workers ...
+  Generating static pages using 8 workers (0/7) ...
+prisma:query SELECT `main`.`Match`.`id`, `main`.`Match`.`time`, `main`.`Match`.`sport`, `main`.`Match`.`category`, `main`.`Match`.`stage`, `main`.`Match`.`team1Id`, `main`.`Match`.`team2Id`, `main`.`Match`.`score1`, `main`.`Match`.`score2`, `main`.`Match`.`winnerId`, `main`.`Match`.`completed` FROM `main`.`Match` WHERE 1=1 LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Team`.`id`, `main`.`Team`.`name`, `main`.`Team`.`penalty_points` FROM `main`.`Team` WHERE 1=1 LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Team`.`id`, `main`.`Team`.`name`, `main`.`Team`.`penalty_points` FROM `main`.`Team` WHERE 1=1 LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`PlayerAppearance`.`id`, `main`.`PlayerAppearance`.`matchId`, `main`.`PlayerAppearance`.`playerCode`, `main`.`PlayerAppearance`.`teamId` FROM `main`.`PlayerAppearance` WHERE `main`.`PlayerAppearance`.`matchId` IN (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Player`.`code`, `main`.`Player`.`name`, `main`.`Player`.`gender`, `main`.`Player`.`teamId` FROM `main`.`Player` WHERE `main`.`Player`.`teamId` IN (?,?,?,?,?,?,?,?) LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Match`.`id`, `main`.`Match`.`time`, `main`.`Match`.`sport`, `main`.`Match`.`category`, `main`.`Match`.`stage`, `main`.`Match`.`team1Id`, `main`.`Match`.`team2Id`, `main`.`Match`.`score1`, `main`.`Match`.`score2`, `main`.`Match`.`winnerId`, `main`.`Match`.`completed` FROM `main`.`Match` WHERE 1=1 LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`PlayerAppearance`.`id`, `main`.`PlayerAppearance`.`matchId`, `main`.`PlayerAppearance`.`playerCode`, `main`.`PlayerAppearance`.`teamId` FROM `main`.`PlayerAppearance` WHERE `main`.`PlayerAppearance`.`matchId` IN (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) LIMIT ? OFFSET ?
+  Generating static pages using 8 workers (1/7) 
+prisma:query SELECT `main`.`Match`.`id`, `main`.`Match`.`time`, `main`.`Match`.`sport`, `main`.`Match`.`category`, `main`.`Match`.`stage`, `main`.`Match`.`team1Id`, `main`.`Match`.`team2Id`, `main`.`Match`.`score1`, `main`.`Match`.`score2`, `main`.`Match`.`winnerId`, `main`.`Match`.`completed` FROM `main`.`Match` WHERE `main`.`Match`.`completed` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Team`.`id`, `main`.`Team`.`name`, `main`.`Team`.`penalty_points` FROM `main`.`Team` WHERE 1=1 LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Player`.`code`, `main`.`Player`.`name`, `main`.`Player`.`gender`, `main`.`Player`.`teamId` FROM `main`.`Player` WHERE `main`.`Player`.`teamId` IN (?,?,?,?,?,?,?,?) LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Team`.`id`, `main`.`Team`.`name`, `main`.`Team`.`penalty_points` FROM `main`.`Team` WHERE 1=1 LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Player`.`code`, `main`.`Player`.`name`, `main`.`Player`.`gender`, `main`.`Player`.`teamId` FROM `main`.`Player` WHERE `main`.`Player`.`teamId` IN (?,?,?,?,?,?,?,?) LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Player`.`code`, `main`.`Player`.`name`, `main`.`Player`.`gender`, `main`.`Player`.`teamId` FROM `main`.`Player` WHERE 1=1 LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Team`.`id`, `main`.`Team`.`name`, `main`.`Team`.`penalty_points` FROM `main`.`Team` WHERE 1=1 LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Team`.`id`, `main`.`Team`.`name`, `main`.`Team`.`penalty_points` FROM `main`.`Team` WHERE `main`.`Team`.`id` IN (?,?,?,?,?,?,?,?) LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Match`.`id`, `main`.`Match`.`time`, `main`.`Match`.`sport`, `main`.`Match`.`category`, `main`.`Match`.`stage`, `main`.`Match`.`team1Id`, `main`.`Match`.`team2Id`, `main`.`Match`.`score1`, `main`.`Match`.`score2`, `main`.`Match`.`winnerId`, `main`.`Match`.`completed` FROM `main`.`Match` WHERE (`main`.`Match`.`completed` = ? AND `main`.`Match`.`stage` = ?) LIMIT ? OFFSET ?
+  Generating static pages using 8 workers (3/7) 
+  Generating static pages using 8 workers (5/7) 
+✓ Generating static pages using 8 workers (7/7) in 1146ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /matches
+├ ○ /standings
+└ ○ /teams
+
+
+○  (Static)  prerendered as static content
+

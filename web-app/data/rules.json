@@ -1,0 +1,192 @@
+{
+  "generalRules": [
+    {
+      "title": "Punctuality",
+      "desc": "All teams must report 15 mins before their scheduled time."
+    },
+    {
+      "title": "Match Points",
+      "desc": "10 points will be awarded for winning each match in a Best-of-3 format."
+    },
+    {
+      "title": "Rule Violation Penalty",
+      "desc": "If any player is found to have broken the tournament rules, the team will be penalised with a deduction of 20 points (-20 points)."
+    }
+  ],
+  "participationRules": [
+    {
+      "title": "Player Injury",
+      "desc": "In case of a player injury during any sport, no team will be allowed to replace the injured player with another team player. For Badminton, Pickleball, Table Tennis and Carrom, the team must forfeit the match in case of an injury. In Football and Tug of War, the team must continue playing with the remaining number of players."
+    },
+    {
+      "title": "Participation Quota",
+      "desc": "It is mandatory for every team to ensure that each player gets to play a minimum of 1 sport against every opposing team. Only after all players have completed their 1-sport quota against that team may the remaining available spots be filled by allowing players to play a 2nd sport. If spots still remain after every player has completed 2 sports, the remaining spots may be filled by allowing players to play a 3rd sport."
+    }
+  ],
+  "sportsRules": [
+    {
+      "sport": "Badminton",
+      "color": "bg-teal-50",
+      "textColor": "text-teal-600",
+      "activeBg": "bg-teal-600",
+      "rules": [
+        {
+          "title": "Match Format",
+          "desc": "Best of 3 sets"
+        },
+        {
+          "title": "Points",
+          "desc": "11 points per set"
+        },
+        {
+          "title": "Set Winner",
+          "desc": "First pair to reach 11 points"
+        },
+        {
+          "title": "Match Winner",
+          "desc": "Pair winning 2 out of 3 sets"
+        },
+        {
+          "title": "Deuce",
+          "desc": "At 10-10, continue until a 2-point lead"
+        },
+        {
+          "title": "Maximum Score",
+          "desc": "At 14-14, the pair scoring the 15th point wins"
+        },
+        {
+          "title": "Scoring",
+          "desc": "Rally point - every rally results in a point"
+        },
+        {
+          "title": "Service",
+          "desc": "Serve diagonally into the opponent's service court. The serve must be hit with an upward racket motion, contacting the shuttlecock below the waist line."
+        }
+      ]
+    },
+    {
+      "sport": "Football Turf",
+      "color": "bg-emerald-50",
+      "textColor": "text-emerald-600",
+      "activeBg": "bg-emerald-600",
+      "rules": [
+        {
+          "title": "Team Size",
+          "desc": "5-a-side"
+        },
+        {
+          "title": "Match Duration",
+          "desc": "15 minutes total (7.5 mins per half)"
+        },
+        {
+          "title": "Throw-ins",
+          "desc": "Kick-ins from the touchline (no throw-ins)"
+        },
+        {
+          "title": "Goalkeeper",
+          "desc": "Must roll the ball underarm or pass with feet. Overarm throwing or drop kicks are not allowed."
+        }
+      ]
+    },
+    {
+      "sport": "Pickleball",
+      "color": "bg-purple-50",
+      "textColor": "text-purple-600",
+      "activeBg": "bg-purple-600",
+      "rules": [
+        {
+          "title": "Match Format",
+          "desc": "Best of 3 sets"
+        },
+        {
+          "title": "Points",
+          "desc": "11 points per set"
+        },
+        {
+          "title": "Set Winner",
+          "desc": "First pair to reach 11 points"
+        },
+        {
+          "title": "Match Winner",
+          "desc": "Pair winning 2 out of 3 sets"
+        },
+        {
+          "title": "Scoring",
+          "desc": "Rally point - every rally results in a point"
+        },
+        {
+          "title": "Double Bounce Rule",
+          "desc": "The ball must bounce once on each side before volleying is allowed."
+        },
+        {
+          "title": "Non-Volley Zone",
+          "desc": "No volleying in the 7-foot zone closest to the net (the Kitchen)."
+        }
+      ]
+    },
+    {
+      "sport": "Table Tennis",
+      "color": "bg-rose-50",
+      "textColor": "text-rose-600",
+      "activeBg": "bg-rose-600",
+      "rules": [
+        {
+          "title": "Match Format",
+          "desc": "Best of 3 sets"
+        },
+        {
+          "title": "Points",
+          "desc": "11 points per set"
+        },
+        {
+          "title": "Set Winner",
+          "desc": "First pair to reach 11 points"
+        },
+        {
+          "title": "Match Winner",
+          "desc": "Pair winning 2 out of 3 sets"
+        },
+        {
+          "title": "Deuce",
+          "desc": "At 10-10, players alternate serves. First pair to gain a 2-point lead wins."
+        },
+        {
+          "title": "Service",
+          "desc": "Serve diagonally into the opponent's service court."
+        }
+      ]
+    },
+    {
+      "sport": "Carrom",
+      "color": "bg-amber-50",
+      "textColor": "text-amber-600",
+      "activeBg": "bg-amber-600",
+      "rules": [
+        {
+          "title": "Match Format",
+          "desc": "Best of 3 boards"
+        },
+        {
+          "title": "Queen",
+          "desc": "Queen covers 3 points."
+        },
+        {
+          "title": "Fouls",
+          "desc": "Striker foul results in a penalty (due point)."
+        }
+      ]
+    },
+    {
+      "sport": "Tug of War",
+      "color": "bg-blue-50",
+      "textColor": "text-blue-600",
+      "activeBg": "bg-blue-600",
+      "rules": [
+        {
+          "title": "Match Format",
+          "desc": "Best of 3 pulls"
+        }
+      ]
+    }
+  ]
+}
