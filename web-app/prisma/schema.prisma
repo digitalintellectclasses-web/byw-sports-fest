@@ -1,10 +1,12 @@
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
 }
 
 datasource db {
   provider = "sqlite"
   url      = "file:./dev.db"
+  // Real connection is handled by the libsql driver adapter at runtime
 }
 
 model Team {
