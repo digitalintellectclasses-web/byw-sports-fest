@@ -6,8 +6,8 @@ const ADMIN_PIN = process.env.ADMIN_PIN || "1234";
 
 export async function authenticate(pin: string) {
   if (pin === ADMIN_PIN) {
-    // Set a cookie that expires in 24 hours
-    cookies().set("admin_session", "true", { 
+    const cookieStore = await cookies();
+    cookieStore.set("admin_session", "true", { 
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
       maxAge: 60 * 60 * 24,
@@ -19,5 +19,6 @@ export async function authenticate(pin: string) {
 }
 
 export async function logout() {
-  cookies().delete("admin_session");
+  const cookieStore = await cookies();
+  cookieStore.delete("admin_session");
 }
