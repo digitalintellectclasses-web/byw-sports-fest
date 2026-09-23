@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client';
-import { PrismLibSQL } from '@prisma/adapter-libsql';
+import { PrismaLibSql } from '@prisma/adapter-libsql';
 import { createClient } from '@libsql/client';
 
 // PrismaClient is attached to the `global` object in development to prevent
@@ -11,7 +11,7 @@ function createPrismaClient() {
     url: process.env.TURSO_DATABASE_URL!,
     authToken: process.env.TURSO_AUTH_TOKEN!,
   });
-  const adapter = new PrismLibSQL(libsql);
+  const adapter = new PrismaLibSql(libsql);
   return new PrismaClient({ adapter, log: ['query'] });
 }
 
