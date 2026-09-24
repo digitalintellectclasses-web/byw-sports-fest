@@ -8,7 +8,6 @@ import { ThemeProvider } from "./components/ThemeProvider";
 import LiveTicker from "./components/LiveTicker";
 import AutoRefresh from "./components/AutoRefresh";
 import { getAnnouncements, getRecentMatches } from "./lib/data";
-import WelcomeModal from "./components/WelcomeModal";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -67,7 +66,6 @@ export default async function RootLayout({
             {children}
           </main>
           <AutoRefresh />
-          <WelcomeModal />
         </ThemeProvider>
       </body>
     </html>

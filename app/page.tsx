@@ -1,6 +1,7 @@
 import { getMatches, getTeams, getPlayers } from "./lib/data";
 import { Trophy, Users, Activity, PlayCircle, CheckCircle2, Clock } from "lucide-react";
 import TiltCard from "./components/TiltCard";
+import WelcomeModal from "./components/WelcomeModal";
 
 export default async function Home() {
   const matches = await getMatches();
@@ -18,6 +19,7 @@ export default async function Home() {
 
   return (
     <div className="space-y-8 ">
+      <WelcomeModal />
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">Tournament Overview</h1>
