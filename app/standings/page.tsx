@@ -4,6 +4,7 @@ import { Trophy, Medal, AlertCircle, ChevronRight } from "lucide-react";
 import { getRankColor } from "../utils";
 import PrintButton from "../components/PrintButton";
 
+export const dynamic = 'force-dynamic';
 export default async function StandingsPage() {
   const pointsData = await getTeamPoints();
   const teams = await getTeams();
