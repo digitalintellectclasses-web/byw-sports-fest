@@ -41,9 +41,9 @@ export default function WelcomeModal() {
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
       <div className="bg-white dark:bg-slate-900 w-full max-w-lg rounded-3xl shadow-2xl p-8 border border-slate-200 dark:border-slate-800 animate-in fade-in zoom-in duration-300">
-        <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white mb-2 text-center">Welcome!</h2>
+        <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white mb-2 text-center">Welcome to BYW Sports Fest!</h2>
         <p className="text-slate-500 dark:text-slate-400 text-center mb-8">
-          Please select how you want to run the application.
+          How would you like to launch the application today?
         </p>
 
         <div className="flex flex-col gap-4">
@@ -56,8 +56,8 @@ export default function WelcomeModal() {
               <Eye size={24} />
             </div>
             <div>
-              <h3 className="font-bold text-slate-900 dark:text-white text-lg">Demo Version</h3>
-              <p className="text-sm text-slate-500 dark:text-slate-400">Explore the app with dummy data and pre-filled scores.</p>
+              <h3 className="font-bold text-slate-900 dark:text-white text-lg">Explore Demo Version</h3>
+              <p className="text-sm text-slate-500 dark:text-slate-400">Take a look around using dummy data and pre-filled match scores.</p>
             </div>
           </button>
 
@@ -71,9 +71,9 @@ export default function WelcomeModal() {
             </div>
             <div>
               <h3 className="font-bold text-slate-900 dark:text-white text-lg flex items-center gap-2">
-                Start Match <span className="text-[10px] uppercase bg-rose-100 dark:bg-rose-900/50 text-rose-600 dark:text-rose-400 px-2 py-0.5 rounded-full">Reset Data</span>
+                Start Real Tournament <span className="text-[10px] uppercase bg-rose-100 dark:bg-rose-900/50 text-rose-600 dark:text-rose-400 px-2 py-0.5 rounded-full font-bold">Resets DB</span>
               </h3>
-              <p className="text-sm text-slate-500 dark:text-slate-400">Resets the database, clears all dummy scores, and updates teams & players.</p>
+              <p className="text-sm text-slate-500 dark:text-slate-400">Clear all dummy scores, import the latest teams, and begin!</p>
             </div>
           </button>
         </div>
