@@ -18,7 +18,8 @@ export default function WelcomeModal() {
   const handleDemo = async () => {
     setLoading(true);
     try {
-      await setupDemoAction();
+      const res = await fetch('/api/setup', { method: 'POST', body: JSON.stringify({ action: 'demo' }) });
+      if (!res.ok) throw new Error("Failed");
       localStorage.setItem("app_mode", "demo");
       setShow(false);
       window.location.reload();
@@ -31,7 +32,8 @@ export default function WelcomeModal() {
   const handleStart = async () => {
     setLoading(true);
     try {
-      await startTournamentAction();
+      const res = await fetch('/api/setup', { method: 'POST', body: JSON.stringify({ action: 'start' }) });
+      if (!res.ok) throw new Error("Failed");
       localStorage.setItem("app_mode", "real");
       setShow(false);
       window.location.reload();
