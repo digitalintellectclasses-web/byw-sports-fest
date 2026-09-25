@@ -1,4 +1,7 @@
-import type { Metadata } from "next";
+const fs = require('fs');
+
+// Fix layout.tsx - the template literal in className was mangled by PowerShell heredoc interpolation
+const correctContent = `import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import DesktopNav from "./DesktopNav";
 import MobileNav from "./MobileNav";
@@ -34,7 +37,7 @@ export default async function RootLayout({
   const isAdmin = (await cookies()).get("admin_session")?.value === "true";
 
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} antialiased h-full`} suppressHydrationWarning>
+    <html lang="en" className={\`\${geistSans.variable} \${geistMono.variable} antialiased h-full\`} suppressHydrationWarning>
       <body className="min-h-full flex flex-col selection:bg-indigo-500 selection:text-white bg-transparent dark:bg-black transition-colors duration-300">
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <div className="fixed inset-0 overflow-hidden pointer-events-none -z-10 bg-slate-50/50 dark:bg-black/90 transition-colors duration-300">
@@ -72,3 +75,7 @@ export default async function RootLayout({
     </html>
   );
 }
+`;
+
+fs.writeFileSync('app/layout.tsx', correctContent, 'utf8');
+console.log('layout.tsx fixed!');

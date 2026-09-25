@@ -1,4 +1,7 @@
-'use client';
+const fs = require('fs');
+
+// Fix MatchActionButtons.tsx - it got corrupted by the emoji replacement
+const correctContent = `'use client';
 
 import { useState, useTransition } from 'react';
 import { useRouter } from 'next/navigation';
@@ -79,16 +82,20 @@ export default function MatchActionButtons({ matchId, team1Id, team2Id }: Props)
           disabled={isPending || !team1Id} 
           className="flex-1 py-3 px-4 rounded-xl font-bold transition-all bg-white dark:bg-slate-800 hover:bg-indigo-50 dark:hover:bg-indigo-900/30 border-2 border-indigo-100 dark:border-indigo-900 hover:border-indigo-300 dark:hover:border-indigo-700 text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-sm hover:shadow-md hover:-translate-y-0.5 active:translate-y-0"
         >
-          {isPending ? 'Updating...' : (`🏆 ${team1Id ? `Team ${team1Id} Wins` : 'TBD'}`)}
+          {isPending ? 'Updating...' : (\`\u{1F3C6} \${team1Id ? \`Team \${team1Id} Wins\` : 'TBD'}\`)}
         </button>
         <button 
           onClick={() => handleWin(team2Id)} 
           disabled={isPending || !team2Id}
           className="flex-1 py-3 px-4 rounded-xl font-bold transition-all bg-white dark:bg-slate-800 hover:bg-pink-50 dark:hover:bg-pink-900/30 border-2 border-pink-100 dark:border-pink-900 hover:border-pink-300 dark:hover:border-pink-700 text-pink-600 dark:text-pink-400 hover:text-pink-700 dark:hover:text-pink-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-sm hover:shadow-md hover:-translate-y-0.5 active:translate-y-0"
         >
-          {isPending ? 'Updating...' : (`🏆 ${team2Id ? `Team ${team2Id} Wins` : 'TBD'}`)}
+          {isPending ? 'Updating...' : (\`\u{1F3C6} \${team2Id ? \`Team \${team2Id} Wins\` : 'TBD'}\`)}
         </button>
       </div>
     </div>
   );
 }
+`;
+
+fs.writeFileSync('app/matches/MatchActionButtons.tsx', correctContent, 'utf8');
+console.log('MatchActionButtons.tsx fixed!');
