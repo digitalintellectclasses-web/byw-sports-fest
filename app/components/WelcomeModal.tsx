@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { PlayCircle, Eye, AlertTriangle } from "lucide-react";
-import { startTournamentAction } from "../setupActions";
+import { startTournamentAction, setupDemoAction } from "../setupActions";
 
 export default function WelcomeModal() {
   const [show, setShow] = useState(false);
@@ -15,15 +15,20 @@ export default function WelcomeModal() {
     }
   }, []);
 
-  const handleDemo = () => {
-    localStorage.setItem("app_mode", "demo");
-    setShow(false);
+  const handleDemo = async () => {
+    setLoading(true);
+    try {
+      await setupDemoAction();
+      localStorage.setItem("app_mode", "demo");
+      setShow(false);
+      window.location.reload();
+    } catch (e) {
+      alert("Failed to setup demo");
+      setLoading(false);
+    }
   };
 
   const handleStart = async () => {
-    if (!confirm("Are you sure? This will overwrite the database with fresh seed data and erase dummy scores.")) {
-      return;
-    }
     setLoading(true);
     try {
       await startTournamentAction();
