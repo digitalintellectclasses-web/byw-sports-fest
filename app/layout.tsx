@@ -8,6 +8,7 @@ import { ThemeProvider } from "./components/ThemeProvider";
 import LiveTicker from "./components/LiveTicker";
 import AutoRefresh from "./components/AutoRefresh";
 import { getAnnouncements, getRecentMatches } from "./lib/data";
+import { cookies } from "next/headers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,8 +32,10 @@ export default async function RootLayout({
 }>) {
   const announcements = await getAnnouncements();
   const recentMatches = await getRecentMatches();
+  const isAdmin = (await cookies()).get("admin_session")?.value === "true";
+
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} antialiased h-full`} suppressHydrationWarning>
+    <html lang="en" className={${geistSans.variable}  antialiased h-full} suppressHydrationWarning>
       <body className="min-h-full flex flex-col selection:bg-indigo-500 selection:text-white bg-transparent dark:bg-black transition-colors duration-300">
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <div className="fixed inset-0 overflow-hidden pointer-events-none -z-10 bg-slate-50/50 dark:bg-black/90 transition-colors duration-300">
@@ -57,11 +60,11 @@ export default async function RootLayout({
                     BYW Sports Fest
                   </div>
                 </div>
-                <DesktopNav />
+                <DesktopNav isAdmin={isAdmin} />
               </div>
             </div>
           </header>
-          <MobileNav />
+          <MobileNav isAdmin={isAdmin} />
           <main className="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 pb-28 md:pb-10">
             {children}
           </main>

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { updateRules, addParticipant, resetTournamentData } from "./actions";
-import { logout } from "../login/actions";
+
 import { Settings, Users, FileText, AlertTriangle, CheckCircle2, Save, RotateCcw, LogOut } from "lucide-react";
 
 export default function SettingsDashboard({ initialRules, teams }: { initialRules: string, teams: any[] }) {
@@ -13,8 +13,9 @@ export default function SettingsDashboard({ initialRules, teams }: { initialRule
   const [rulesStatus, setRulesStatus] = useState("");
 
   const handleLogout = async () => {
-    await logout();
-    router.push("/login");
+    await fetch('/api/auth', { method: 'DELETE' });
+    router.push('/login');
+    router.refresh();
   };
   
   const [playerForm, setPlayerForm] = useState({ code: "", name: "", gender: "Male", teamId: teams[0]?.id || "" });
