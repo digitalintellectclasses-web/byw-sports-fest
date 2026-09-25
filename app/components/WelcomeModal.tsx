@@ -63,7 +63,9 @@ export default function WelcomeModal() {
               <Eye size={24} />
             </div>
             <div>
-              <h3 className="font-bold text-slate-900 dark:text-white text-lg">Explore Demo Version</h3>
+              <h3 className="font-bold text-slate-900 dark:text-white text-lg">
+                {loading ? "Loading Demo Data..." : "Explore Demo Version"}
+              </h3>
               <p className="text-sm text-slate-500 dark:text-slate-400">Take a look around using dummy data and pre-filled match scores.</p>
             </div>
           </button>
@@ -78,7 +80,8 @@ export default function WelcomeModal() {
             </div>
             <div>
               <h3 className="font-bold text-slate-900 dark:text-white text-lg flex items-center gap-2">
-                Start Real Tournament <span className="text-[10px] uppercase bg-rose-100 dark:bg-rose-900/50 text-rose-600 dark:text-rose-400 px-2 py-0.5 rounded-full font-bold">Resets DB</span>
+                {loading ? "Starting Tournament..." : "Start Real Tournament"}
+                <span className="text-[10px] uppercase bg-rose-100 dark:bg-rose-900/50 text-rose-600 dark:text-rose-400 px-2 py-0.5 rounded-full font-bold">Resets DB</span>
               </h3>
               <p className="text-sm text-slate-500 dark:text-slate-400">Clear all dummy scores, import the latest teams, and begin!</p>
             </div>
