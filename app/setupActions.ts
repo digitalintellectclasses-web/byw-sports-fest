@@ -1,15 +1,11 @@
 "use server";
 
-import fs from "fs";
-import path from "path";
 import { revalidatePath } from "next/cache";
 import { prisma } from "./lib/data";
+import data from "./lib/data.json";
 
 export async function startTournamentAction() {
   try {
-    const filePath = path.join(process.cwd(), "seed_data.json");
-    const data = JSON.parse(fs.readFileSync(filePath, "utf-8"));
-
     // We will do all deletions and insertions in a single transaction
     // This is much faster and avoids foreign key race conditions
     await prisma.$transaction([
